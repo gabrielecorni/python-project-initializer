@@ -27,3 +27,81 @@ brew install helm git-flow tree
 ```shell
 ppi <project-name> "<project-description>"
 ```
+
+Example log:
+```shell
+$ ppi super-frontend "A super frontend"
+
+[Init] > Project structure
+Created package super_frontend in super-frontend
+
+[Init] > README
+
+[Init] > .gitignore
+
+[Init] > License
+
+[Init] > Docker
+
+[Init] > Jenkins
+
+[Init] > Scripts
+
+[Init] > Setuptools
+
+[Init] > Helm
+Creating scripts/deployments/super-frontend
+
+[Init] > Git
+Initialized empty Git repository in /Users/abc/custom/path/super-frontend/.git/
+No branches exist yet. Base branches must be created now.
+Branch name for production releases: [master] main
+Branch name for "next release" development: [develop] 
+
+How to name your supporting branch prefixes?
+Feature branches? [feature/] 
+Release branches? [release/] 
+Hotfix branches? [hotfix/] 
+Support branches? [support/] 
+Version tag prefix? [] 
+
+[Init] > Done
+
+.
+├── LICENSE
+├── README.md
+├── docker
+│   └── Dockerfile
+├── jenkins
+│   └── Jenkinsfile
+├── pyproject.toml
+├── scripts
+│   ├── _conf.sh
+│   ├── deployments
+│   │   └── super-frontend
+│   │       ├── Chart.yaml
+│   │       ├── charts
+│   │       ├── templates
+│   │       │   ├── NOTES.txt
+│   │       │   ├── _helpers.tpl
+│   │       │   ├── deployment.yaml
+│   │       │   ├── hpa.yaml
+│   │       │   ├── ingress.yaml
+│   │       │   ├── service.yaml
+│   │       │   ├── serviceaccount.yaml
+│   │       │   └── tests
+│   │       │       └── test-connection.yaml
+│   │       └── values.yaml
+│   ├── docker-build.sh
+│   ├── docker-clean.sh
+│   ├── docker-push.sh
+│   └── docker-run.sh
+├── setup.py
+├── super_frontend
+│   └── __init__.py
+└── tests
+    ├── __init__.py
+    └── test_super_frontend.py
+
+10 directories, 24 files
+```
