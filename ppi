@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# params
+PROJECT_NAME=$1
+PROJECT_DESC=$2
+
+# Project structure
+echo "[Init] > Project structure"
+poetry new $PROJECT_NAME
+cd $PROJECT_NAME
+echo ""
+
+# README
+echo "[Init] > README"
+mv README.rst README.md
+echo "# $PROJECT_NAME" >> README.md
+echo "$PROJECT_DESC" >> README.md
+echo ""
+
+# .gitignore
+echo "[Init] > .gitignore"
+curl -fsSL https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,pycharm,jupyternotebooks,pycharm+all,pycharm+iml -o .gitignore
+echo ""
+
+# LICENSE
+echo "[Init] > License"
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/LICENSE -o LICENSE
+echo ""
+
+# Docker
+echo "[Init] > Docker"
+mkdir docker
+touch docker/Dockerfile
+echo ""
+
+# Jenkins
+echo "[Init] > Jenkins"
+mkdir jenkins
+touch jenkins/Jenkinsfile
+echo ""
+
+# Scripts
+echo "[Init] > Scripts"
+mkdir scripts
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/.gitignore -o scripts/.gitignore
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/_conf.sh -o scripts/_conf.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-build.sh -o scripts/docker-build.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-clean.sh -o scripts/docker-clean.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-push.sh -o scripts/docker-push.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-run.sh -o scripts/docker-run.sh
+echo ""
+
+# setuptools
+echo "[Init] > Setuptools"
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/src/setup.py -o setup.py
+echo ""
+
+# helm
+echo "[Init] > Helm"
+mkdir ./scripts/deployments
+helm create scripts/deployments/$PROJECT_NAME
+echo ""
+
+# git-flow
+echo "[Init] > Git"
+git flow init
+echo ""
+
+# Output
+echo "[Init] > Done"
+echo ""
+tree -R .

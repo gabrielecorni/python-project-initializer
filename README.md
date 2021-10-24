@@ -13,4 +13,17 @@ Install them by following the provided links:
     + the current poetry configuration can be found running: `poetry config --list`
 + [helm](https://formulae.brew.sh/formula/helm)
 + [git-flow](https://formulae.brew.sh/formula/git-flow)
+    + GitHub changed the default branch name from `master` to `main`, thus to suppress a potential warning from `git init` update your `git` config by running: `git config --global init.defaultBranch main`
 + [tree](https://formulae.brew.sh/formula/tree)
+
+#### TL;DR
+
+```shell
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+brew install helm git-flow tree
+```
+
+### Run
+```shell
+ppi <project-name> "<project-description>"
+```
