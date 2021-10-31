@@ -4,6 +4,8 @@ MacOS shell script to initialize a new, structured Python project.
 
 ### Prerequisites
 + Python3
++ Git
+    + GitHub changed the default branch name from `master` to `main`, thus to suppress a potential warning from `git init` update your `git` config by running: `git config --global init.defaultBranch main`
 
 ### Dependencies
 
@@ -11,16 +13,17 @@ Install them by following the provided links:
 + [poetry](https://python-poetry.org/docs/master/#installation)
     + if you (like me) like to have the virtualenv in a `.venv` folder within the project, you can [configure poetry](https://python-poetry.org/docs/configuration/#virtualenvsin-project) accordingly by running: `poetry config virtualenvs.in-project true` 
     + the current poetry configuration can be found running: `poetry config --list`
-+ [helm](https://formulae.brew.sh/formula/helm)
-+ [git-flow](https://formulae.brew.sh/formula/git-flow)
-    + GitHub changed the default branch name from `master` to `main`, thus to suppress a potential warning from `git init` update your `git` config by running: `git config --global init.defaultBranch main`
++ [helm](https://formulae.brew.sh/formula/helm)  
 + [tree](https://formulae.brew.sh/formula/tree)
 
+Bonus point (not needed):
++ [git-flow](https://formulae.brew.sh/formula/git-flow)
 #### TL;DR
 
 ```shell
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
-brew install helm git-flow tree
+brew install helm tree
+# brew install git-flow  # if you want
 ```
 
 ### Run
