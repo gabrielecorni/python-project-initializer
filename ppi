@@ -42,17 +42,17 @@ echo ""
 # Scripts
 echo "[Init] > Scripts"
 mkdir scripts
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/.gitignore -o scripts/.gitignore
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/_conf.sh -o scripts/_conf.sh
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-build.sh -o scripts/docker-build.sh
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-clean.sh -o scripts/docker-clean.sh
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-push.sh -o scripts/docker-push.sh
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/scripts/docker-run.sh -o scripts/docker-run.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/scripts/.gitignore -o scripts/.gitignore
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/scripts/_conf.sh -o scripts/_conf.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/scripts/docker-build.sh -o scripts/docker-build.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/scripts/docker-clean.sh -o scripts/docker-clean.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/scripts/docker-push.sh -o scripts/docker-push.sh
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/scripts/docker-run.sh -o scripts/docker-run.sh
 echo ""
 
 # setuptools
 echo "[Init] > Setuptools"
-curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/src/setup.py -o setup.py
+curl -fsSL https://raw.githubusercontent.com/gabrielecorni/python-project-initializer/master/data/src/setup.py -o setup.py
 echo ""
 
 # helm
